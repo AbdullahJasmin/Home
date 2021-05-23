@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
+    <meta NAME="ROBOTS" CONTENT="NOODP" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Welcome to the world of AJ">
+    <meta name="keywords" content="AJ,Envisionater">
+    <meta name="author" content="Abdullah Jasmin">
+
+     
+    <link rel="stylesheet" href="css/indexstyle.css" type="text/css" />
+   
+    <link rel="shortcut icon" href="img/logo.png" type="image/png" />
+
+    <title>AJ</title>
+</head>
+
+<body>
+    <div class='load-box'>
+
+        <img class='small' src="img/plug2.png" />
+    </div>
+    <div class='load-box'>
+        <img class='small' src="img/plug1.png" />
+    </div>
+    <div id='loader'>
+        <!-The loading fx-!>
+        <div class="spinx spinx-1">
+            <div class="spinx spinx-2">
+                <div class="spinx spinx-3">
+                    <div class="spinx spinx-4">
+                        <div class="spinx spinx-5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span id="loading" data-text="Loading…">Loading…</span>
+    <p><span id="title" data-text="Project AJ">Project AJ</span>
+
+        <span id='console'><samp id='samp'>
+                Connecting Periphrals...<br />
+            </samp></span>
+
+        <span class='ent' data-text="Enter the world of IOT">Enter the world of IOT</span>
+    </p>
+
+    <button class="begin" onmouseover="mi()" onmouseout="mo()" onclick="begin(), delay('main.html')" title="click to begin" id='Enter'></button>
+    <div id='particles-js'></div>
+
+    <audio id="trans" src="track/trans.mp3" loop="true" autostart="true" hidden="true"></audio>
+
+
+    <script type="text/javascript" src="js/particles.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/app1.js"></script>
+    <script type="text/javascript">
+        var trans = document.getElementById("trans");
+
+        function onReady(callback) {
+            setTimeout(function() {
+
+                document.getElementById('samp').innerHTML += "Configuring Device...<br/>";
+            }, 300);
+            setTimeout(function() {
+
+                document.getElementById('samp').innerHTML += "Generating a UI...<br/>";
+            }, 700);
+
+            setTimeout(function() {
+
+                document.getElementById('samp').innerHTML += "Establishing secure connections...<br/>";
+            }, 900);
+
+            setTimeout(function() {
+
+                document.getElementById('samp').innerHTML += "Connection Established successfully...<br/>";
+            }, 1100);
+            setTimeout(function() {
+                if (navigator.onLine) {
+                    var x = "Internet Connection Status- Online ";
+                } else {
+                    var x = "Internet Connection Status- Offline ";
+                }
+
+                document.getElementById("samp").innerHTML += x + '<br/>';
+            }, 1500);
+            setTimeout(function() {
+
+                document.getElementById('samp').innerHTML += " Click the plug to begin <br />";
+            }, 1800);
+            setTimeout(function() {
+
+                document.getElementById('samp').innerHTML += " &copy;Abdullah Jasmin 2021 <br /> University of Colombo School of Computing";
+            }, 1900);
+
+            var intervalID = window.setInterval(checkReady, 3000);
+
+            function checkReady() {
+                if (document.getElementsByTagName('body')[0] !== undefined) {
+                    window.clearInterval(intervalID);
+                    callback.call(this);
+                }
+            }
+        };
+
+        function show(id, value) {
+            document.getElementById(id).style.display = value ? 'block' : 'none';
+
+        }
+
+        onReady(function() {
+            show('loading', false);
+            show('title', true);
+            $(function() {
+                $('.load-box img').removeClass('small');
+
+
+            });
+        });
+        $(document).ready(function() {
+            $('#console').animate({
+                scrollTop: $('#console').get(0).scrollHeight
+            }, 3000);
+        });
+        setTimeout(function() {
+            $('button').removeClass('begin');
+        }, 4000);
+
+        function mi() {
+            $('.load-box,#particles-js,.ent,body').addClass('begin');
+            $('.load-box img').addClass('small');
+            $('#console').css('opacity', '0');
+        };
+
+        function mo() {
+            $('.load-box,#particles-js,.ent,body').removeClass('begin');
+            $('.load-box img').removeClass('small');
+            $('#console').css('opacity', '1');
+        };
+
+        function begin() {
+            $('.load-box,#particles-js,.ent,body').removeClass('begin');
+            $('.load-box img').removeClass('small');
+            setTimeout(function() {
+                $('body,button').css('opacity', '0');
+                $('body').css('background', 'black');
+
+            }, 500);
+            trans.play();
+        };
+
+        audio.onplaying = function() {
+            isPlaying = true;
+        };
+        audio.onpause = function() {
+            isPlaying = false;
+        };
+
+        function delay(URL) {
+            setTimeout(function() {
+                window.location = URL
+            }, 1600);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Abdullah Jasmin</title>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8" />
+    <meta NAME="ROBOTS" CONTENT="NOODP" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <meta name="description" content="Welcome to the world of AJ">
+    <meta name="keywords" content="AJ,Envisionater">
+    <meta name="author" content="Abdullah Jasmin">
+    <link rel="shortcut icon" href="img/logo.png" type="image/png" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+         * {
+            cursor: pointer;
+            box-sizing: border-box;
+            transition: 0.5s all;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 2px
+        }
+
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 2px
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: grey;
+            border-radius: 2px
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #000
+        }
+
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f5f5
+        }
+
+        .row {
+            text-align: center;
+            margin: 8px -16px
+        }
+
+        .row,
+        .row .column {
+            padding: 1px
+        }
+
+        .column {
+            height: 250px;
+            display: inline-block;
+            width: 30%
+        }
+
+        .content {
+            background-color: #fff;
+            height: 170px;
+            overflow-y: hidden;
+            padding: 10px
+        }
+
+        .content img {
+            width: 100%;
+            height: 150px
+        }
+
+        .column:hover .content {
+            height: 220px
+        }
+
+        .content:hover {
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, .1)
+        }
+
+        .h1 {
+            padding-top: 5px;
+            font-size: 50px
+        }
+
+        .h2 {
+            font-size: 30px
+        }
+
+        .home {
+            background: linear-gradient(33deg, #1e78da, #620e8b);
+            background-size: 400% 400%;
+            animation: bgmove 30s ease infinite;
+            height: 100%;
+            position: relative
+        }
+
+        .home-center {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff
+        }
+
+        .main {
+            max-width: 1000px;
+            padding-top: 10px;
+            margin: auto
+        }
+
+        .start {
+            border-radius: 4px;
+            background-color: transparent;
+            border: 1px solid #fff;
+            color: #fff;
+            text-align: center;
+            font-size: 28px;
+            padding: 20px;
+            width: 200px;
+            transition: all .5s;
+            cursor: pointer;
+            margin: 5px
+        }
+
+        .start span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            transition: .5s
+        }
+
+        .start span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: .5s
+        }
+
+        .start:hover span {
+            padding-right: 25px
+        }
+
+        .start:hover span:after {
+            opacity: 1;
+            right: 0
+        }
+
+        .profilepic {
+            width: 150px;
+            display: inline-block
+        }
+
+        .about {
+            width: 250px
+        }
+
+        .ac {
+            padding: 5px;
+            text-align: center
+        }
+
+        .aj {
+            text-align: justify
+        }
+
+        .w50 {
+            vertical-align: middle;
+            width: 45%;
+            display: inline-block;
+            position: relative
+        }
+
+        footer {
+            width: 100%;
+            position: relative;
+            text-align: center;
+            padding: 23px;
+            background-color: rgba(0, 0, 0, .8);
+            color: #fff
+        }
+
+        input[type=text],
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: #333;
+            color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical
+        }
+
+        input[type=submit] {
+            background-color: #333;
+            border: 1px solid #ccc;
+            color: #fff;
+            padding: 12px 20px;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer
+        }
+
+        input[type=submit]:hover {
+            background-color: #222
+        }
+
+        .footer {
+            background: #111;
+            padding: 15px;
+            width: 100%;
+            color: #fff;
+            text-align: center
+        }
+
+        @media screen and (max-width:900px) {
+            .column {
+                width: 50%
+            }
+        }
+
+        @media screen and (max-width:600px) {
+            .column {
+                width: 100%
+            }
+        }
+
+        @keyframes bgmove {
+            0% {
+                background-position: 51% 0
+            }
+
+            50% {
+                background-position: 50% 100%
+            }
+
+            100% {
+                background-position: 51% 0
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="home">
+        <div class="home-center"> <img class="profilepic" data-aos="fade-up" src="img/me.svg" alt="">
+            <div class="home-text" data-aos="fade-down"> <span class="h1">Abdullah Jasmin</span><br /> <span class="h2">UCSC undergraduate</span> </div><a href="#main"><button class="start"><span>Start </span></button></a>
+        </div>
+    </div>
+    <div class="main ac" id="main"> <span class="h1">About</span>
+        <div class="row">
+            <div class=" w50 aj">
+                <p> I am Abdullah Jasmin, a student at the University of Colombo School of Computing. I attended Lyceum Nugegoda, where I did my Ordinary Level and Advanced Level Exams. I played Football, Table Tennis, and chess while also participating in MUN conferences and IT competitions.</p>
+                <p>There are 4 members in my family which includes my parents and my elder sister. My parents are both Attorneys-at-Law, and have graduated at the University of Colombo.</p>
+            </div>
+            <div class="w50"><img class=" about " src="img/logo.png" alt=""></div>
+        </div>
+        <h1>PORTFOLIO</h1>
+        <div class="row">
+            <div class="column">
+                <div class="content"> <img src="img/wd.jpeg" alt="Mountains">
+                    <h3>Web Development</h3>
+                </div>
+            </div>
+            <div class="column">
+                <div class="content"> <img src="img/ve.jpg" alt="Lights">
+                    <h3>Video editing</h3>
+                </div>
+            </div>
+            <div class="column">
+                <div class="content"> <img src="img/an.png" alt="Nature">
+                    <h3>Animation</h3>
+                </div>
+            </div>
+        </div>
+    </div><br><br><br>
+    <footer>
+        <div class="contact">
+            <h1>Contact</h1>
+            <div class="w50">
+                <form action=" "> <label for="fname">First Name</label> <input type="text" id="fname" name="firstname" placeholder="Your name.."> <label for="lname">Last Name</label> <input type="text" id="lname" name="lastname" placeholder="Your last name.."> <label for="subject">Subject</label> <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea> <input type="submit" value="Submit"> </form>
+            </div>
+        </div><br />
+    </footer>
+    <div class="footer">&copy; Abdullah Jasmin</div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+    </script>
+</body>
+
+</html>
